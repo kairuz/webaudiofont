@@ -1,5 +1,9 @@
 'use strict'
 
+import WebAudioFontPlayer from "./player.js";
+import {ChordQueue} from "./otypes.js";
+
+
 class WebAudioFontTicker {
 	stateStop = 1;
 	statePlay = 2;
@@ -70,3 +74,6 @@ class WebAudioFontTicker {
 		}
 	};
 }
+
+
+export default WebAudioFontTicker;
