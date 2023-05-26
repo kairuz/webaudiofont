@@ -1,5 +1,6 @@
 'use strict'
 
+
 class WebAudioFontChannel {
 	audioContext: AudioContext;
 	input: GainNode;
@@ -40,3 +41,6 @@ class WebAudioFontChannel {
 		return filter;
 	};
 }
+
+
+export default WebAudioFontChannel;

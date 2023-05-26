@@ -1,5 +1,9 @@
 'use strict'
 
+import WebAudioFontPlayer from "./player.js";
+import {CachedPreset, NumPair, PresetInfo, WavePreset} from "./otypes.js";
+
+
 class WebAudioFontLoader {
 	cached: CachedPreset[] = [];
 	player: WebAudioFontPlayer;
@@ -631,3 +635,6 @@ class WebAudioFontLoader {
 		return 0;
 	}
 }
+
+
+export default WebAudioFontLoader;

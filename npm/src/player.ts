@@ -4,6 +4,10 @@ console.log('WebAudioFont Engine v3.0.04 GPL3');
 //npm link typescript
 //npx typedoc player.ts otypes.ts channel.ts loader.ts reverberator.ts ticker.ts
 
+import WebAudioFontLoader from "./loader.js";
+import WebAudioFontChannel from "./channel.js";
+import {WaveEnvelope, WavePreset, WaveSlide, WaveZone, WaveAHDSR} from "./otypes.js";
+
 class WebAudioFontPlayer {
 	envelopes: WaveEnvelope[] = [];
 	loader = new WebAudioFontLoader(this);
@@ -331,3 +335,5 @@ class WebAudioFontPlayer {
 		}
 	};
 }
+
+export default WebAudioFontPlayer;

@@ -54,3 +54,9 @@ type ChordQueue = {
 	, volume?: number
 	, slides?: WaveSlide[]
 };
+
+
+export {
+	WaveEnvelope, WaveZone, WavePreset, WaveSlide, WaveAHDSR,
+	CachedPreset, NumPair, PresetInfo, ChordQueue
+};
