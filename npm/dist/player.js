@@ -155,6 +155,26 @@ class WebAudioFontPlayer {
             //don't care
         }
     }
+    ;
+    createNodeForPitch(audioContext, preset, pitch) {
+        this.resumeContext(audioContext);
+        const zone = this.findZone(audioContext, preset, pitch);
+        if (zone) {
+            if (!(zone.buffer)) {
+                console.log('empty buffer ', zone);
+                return null;
+            }
+            const baseDetune = zone.originalPitch - 100.0 * zone.coarseTune - zone.fineTune;
+            const playbackRate = Math.pow(2, (100.0 * pitch - baseDetune) / 1200.0);
+            const audioBufferSourceNode = new AudioBufferSourceNode(audioContext, { buffer: zone.buffer });
+            audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, 0);
+            return audioBufferSourceNode;
+        }
+        else {
+            return null;
+        }
+    }
+    ;
     queueWaveTable(audioContext, target, preset, when, pitch, duration, volume, slides) {
         this.resumeContext(audioContext);
         volume = this.limitVolume(volume);
